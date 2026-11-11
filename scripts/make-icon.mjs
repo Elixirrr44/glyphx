@@ -7,6 +7,8 @@
  *   electron/assets/icon.png   (512×512, used by the window and Linux/macOS builds)
  *   electron/assets/icon.ico   (16–256 px, used by the Windows exe and installer)
  *   src/app/favicon.ico        (16–48 px, browser tab icon for the web build)
+ *   src/app/apple-icon.png     (180 px, full-bleed, iPhone home screen)
+ *   public/icons/icon-*.png    (192/512 px + 512 px maskable, web app manifest)
  *
  * Usage: node scripts/make-icon.mjs
  */
@@ -75,8 +77,12 @@ function background(x, y) {
   return c.map((v, i) => lerp(v, DEEP[i], shade));
 }
 
-/** Render an RGBA buffer of `size`×`size` with `ss`×`ss` supersampling. */
-function render(size, ss = 4) {
+/**
+ * Render an RGBA buffer of `size`×`size` with `ss`×`ss` supersampling.
+ * `fullBleed` fills the whole square (platforms that apply their own mask);
+ * `glyphScale` shrinks the triangle + sparkle around the centre (maskable safe zone).
+ */
+function render(size, ss = 4, { fullBleed = false, glyphScale = 1 } = {}) {
   const px = Buffer.alloc(size * size * 4);
   for (let j = 0; j < size; j++) {
     for (let i = 0; i < size; i++) {
@@ -89,9 +95,11 @@ function render(size, ss = 4) {
         for (let sx = 0; sx < ss; sx++) {
           const x = (i + (sx + 0.5) / ss) / size;
           const y = (j + (sy + 0.5) / ss) / size;
-          if (!insideRoundedSquare(x, y)) continue;
+          if (!fullBleed && !insideRoundedSquare(x, y)) continue;
           cover++;
-          const isWhite = onTriangleStroke(x, y) || inSparkle(x, y);
+          const gx = 0.5 + (x - 0.5) / glyphScale;
+          const gy = 0.5 + (y - 0.5) / glyphScale;
+          const isWhite = onTriangleStroke(gx, gy) || inSparkle(gx, gy);
           const [br, bg, bb] = isWhite ? [255, 255, 255] : background(x, y);
           if (isWhite) white++;
           r += br;
@@ -187,4 +195,12 @@ mkdirSync(assets, { recursive: true });
 writeFileSync(join(assets, "icon.png"), encodePng(512, render(512, 3)));
 writeFileSync(join(assets, "icon.ico"), encodeIco([256, 128, 64, 48, 32, 24, 16].map(pngFor)));
 writeFileSync(join(root, "src", "app", "favicon.ico"), encodeIco([48, 32, 16].map(pngFor)));
-console.log("Icons written to electron/assets and src/app/favicon.ico");
+writeFileSync(join(root, "src", "app", "apple-icon.png"), encodePng(180, render(180, 6, { fullBleed: true, glyphScale: 0.9 })));
+
+const web = join(root, "public", "icons");
+mkdirSync(web, { recursive: true });
+writeFileSync(join(web, "icon-192.png"), encodePng(192, render(192, 6)));
+writeFileSync(join(web, "icon-512.png"), encodePng(512, render(512, 3)));
+// Maskable icons are cropped to a circle/squircle by Android: fill edge to edge and keep the glyph in the inner 80%.
+writeFileSync(join(web, "icon-maskable-512.png"), encodePng(512, render(512, 3, { fullBleed: true, glyphScale: 0.78 })));
+console.log("Icons written to electron/assets, public/icons and src/app (favicon, apple-icon)");

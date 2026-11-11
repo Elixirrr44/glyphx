@@ -1,10 +1,16 @@
 import type { NextConfig } from "next";
 
 /**
- * GLYPHX_TARGET=desktop produces a fully static export in ./out that the
- * Electron shell (electron/main.cjs) serves from disk. The web build is unchanged.
+ * Build targets (GLYPHX_TARGET):
+ *   (unset)   regular Next.js web build (Vercel / `next start`)
+ *   desktop   static export in ./out, served from disk by the Electron shell (electron/main.cjs)
+ *   pages     static export in ./out-pages for GitHub Pages at https://<user>.github.io/glyphx/,
+ *             with a home-screen manifest and an offline service worker (scripts/pages.mjs)
  */
-const desktop = process.env.GLYPHX_TARGET === "desktop";
+const target = process.env.GLYPHX_TARGET;
+
+/** GitHub Pages serves a project site from /<repository name>. */
+const PAGES_BASE_PATH = "/glyphx";
 
 const turbopack: NextConfig["turbopack"] = {
   rules: {
@@ -34,4 +40,17 @@ const desktopConfig: NextConfig = {
   turbopack,
 };
 
-export default desktop ? desktopConfig : webConfig;
+const pagesConfig: NextConfig = {
+  output: "export",
+  // GitHub Pages serves /glyphx/generator/ from generator/index.html.
+  trailingSlash: true,
+  basePath: PAGES_BASE_PATH,
+  distDir: "out-pages",
+  env: {
+    NEXT_PUBLIC_BASE_PATH: PAGES_BASE_PATH,
+    NEXT_PUBLIC_ENABLE_SW: "1",
+  },
+  turbopack,
+};
+
+export default target === "desktop" ? desktopConfig : target === "pages" ? pagesConfig : webConfig;
