@@ -22,6 +22,10 @@ export const metadata: Metadata = {
   description:
     "Type anything and instantly generate hundreds of real Unicode text effects — triangle overlays, zalgo, fancy fonts and emoji combos — ready to copy into Discord, Instagram, TikTok and games.",
   applicationName: "GlyphX",
+  // Home-screen web app on iPhone/iPad: opens full screen with the GlyphX name.
+  appleWebApp: { capable: true, title: "GlyphX", statusBarStyle: "black" },
+  // Stop iOS turning digits in generated text into phone-number links.
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {

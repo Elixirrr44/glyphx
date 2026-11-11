@@ -6,6 +6,18 @@ triangle overlays (`G⃤A⃤N⃤G⃤`), strikes (`H̷E̷L̷L̷O̷`), enclosing c
 and ANSI colour blocks. Everything is generated locally on your device — no API keys,
 no backend, no images.
 
+## Use it on your phone (or any browser)
+
+**[Open GlyphX → elixirrr44.github.io/glyphx](https://elixirrr44.github.io/glyphx/)**
+
+Works on iPhone, Android, Mac and PC with nothing to install. To get an app icon on your phone:
+
+- **iPhone / iPad (Safari):** tap **Share** → **Add to Home Screen**.
+- **Android (Chrome):** tap **⋮** → **Add to Home screen** (or **Install app**).
+
+It then opens full screen like a normal app, and keeps working offline after your first visit.
+Favorites and history are saved separately on each device.
+
 ## Download (Windows)
 
 **[⬇ Download the latest GlyphX for Windows](https://github.com/Elixirrr44/glyphx/releases/latest)**
@@ -67,7 +79,24 @@ Open http://localhost:3000.
 | `npm run desktop` | Build the static export and open it in the desktop shell (no installer). |
 | `npm run desktop:dist` | Build the Windows installer and portable exe into `release/`. |
 | `npm run desktop:selftest` | Launch the packaged `release/win-unpacked/GlyphX.exe` invisibly, check every page, copy and navigation, and print the results. |
-| `npm run icons` | Regenerate the app icon (`electron/assets/`) and the web favicon. |
+| `npm run icons` | Regenerate the app icons (desktop, favicon, iPhone and web-app manifest sizes). |
+| `npm run pages:build` | Build the phone-friendly website into `out-pages/` (static export under `/glyphx`, offline service worker). |
+| `npm run pages:preview` | Build it and serve it at http://localhost:4173/glyphx/ — the script also prints a link for phones on the same Wi-Fi. |
+| `npm run pages:publish` | Build it and publish it to the `gh-pages` branch, which GitHub Pages serves at https://elixirrr44.github.io/glyphx/. |
+
+## Website on GitHub Pages
+
+`npm run pages:publish` rebuilds the site with `GLYPHX_TARGET=pages` and force-pushes `out-pages/` to the
+`gh-pages` branch (that branch only ever holds the latest build). GitHub Pages republishes it within about a minute.
+
+- **Base path:** the site lives under `/glyphx`, set by `PAGES_BASE_PATH` in `next.config.ts` and `BASE` in
+  `scripts/pages.mjs`. Both must match the repository name.
+- **Home-screen app:** `src/app/manifest.webmanifest` (relative URLs, so it works under any base path),
+  `src/app/apple-icon.png` and `public/icons/` make the site installable with its own name and icon.
+- **Offline:** `scripts/pages.mjs` generates `sw.js`, which precaches every page, script, style and font (about 4 MB).
+  Pages are fetched fresh when online and served from the cache when offline. A new publish gets a new cache
+  name, so phones pick up updates on their next visit and drop the old copy.
+- `.nojekyll` is written into the build so GitHub Pages serves the `_next/` folder.
 
 ## Desktop app (Windows .exe)
 
