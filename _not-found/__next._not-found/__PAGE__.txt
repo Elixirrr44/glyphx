@@ -1,0 +1,32 @@
+1:"$Sreact.fragment"
+2:"/glyphx/_next/static/chunks/0n8d_l5gej99f.js"
+3:"/glyphx/_next/static/chunks/3qmdfpb42n8uq.js"
+4:"/glyphx/_next/static/chunks/0oev-qngv-6b7.js"
+5:"/glyphx/_next/static/chunks/2rastks4jma7t.js"
+6:I[89967,["$2","$3","$4","$5"],"Providers"]
+7:I[59760,["$2","$3","$4","$5"],"AppShell"]
+8:I[39756,["$2","$3","$4","$5"],"default"]
+9:I[37457,["$2","$3","$4","$5"],"default"]
+10:I[97367,["$2","$3","$4","$5"],"OutletBoundary"]
+11:"$Sreact.suspense"
+14:"ViewportBoundary"
+15:I[97367,["$2","$3","$4","$5"],"$14"]
+16:"MetadataBoundary"
+17:I[97367,["$2","$3","$4","$5"],"$16"]
+18:I[27201,["$2","$3","$4","$5"],"IconMark"]
+:HL["/glyphx/_next/static/chunks/206uhnedgqnbf.css","style"]
+b:X
+e:X
+e:C
+f:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$1","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:1:props:children:props:children:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:t:t:d:r:props:children:1:props:children:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:t:t:d:r:props:children:1:props:children:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],null,["$","$L10",null,{"children":["$","$11",null,{"name":"Next.MetadataOutlet","children":"$@12"}]}]]}],"p":"$@13","v":null,"s":"$b"}}]]
+c:[["children",{"s":"/_not-found","h":96,"d":{"r":["$","$1","c",{"children":[null,["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}]}]]}],"p":"$@d","v":"$e","s":"$b"},"c":"$Qf"}]]
+0:{"t":{"t":{"s":"","h":80,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/glyphx/_next/static/chunks/206uhnedgqnbf.css","precedence":"next"}],["$","script","script-0",{"src":"/glyphx/_next/static/chunks/0n8d_l5gej99f.js","async":true}],["$","script","script-1",{"src":"/glyphx/_next/static/chunks/3qmdfpb42n8uq.js","async":true}],["$","script","script-2",{"src":"/glyphx/_next/static/chunks/0oev-qngv-6b7.js","async":true}],["$","script","script-3",{"src":"/glyphx/_next/static/chunks/2rastks4jma7t.js","async":true}]],["$","html",null,{"lang":"en","className":"dark _0bjUvq_variable MXaS9a_variable BVULza_variable NsSHmq_variable _4e5QZG_variable antialiased","data-accent":"violet","data-preview-font":"system","suppressHydrationWarning":true,"children":["$","body",null,{"children":[["$","div",null,{"className":"app-backdrop","aria-hidden":true}],["$","$L6",null,{"children":["$","$L7",null,{"children":["$","$L8",null,{"parallelRouterKey":"children","template":["$","$L9",null,{}],"notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]]}]}]}]]}]}]]}],"p":"$@a","v":null,"s":"$b"},"c":"$Qc"},"h":{"r":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L15",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#0d0b14"}],["$","meta","3",{"name":"color-scheme","content":"dark"}]]}],["$","$L17",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$11",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"GlyphX — Unicode Text & Emoji Designer"}],["$","meta","1",{"name":"description","content":"Type anything and instantly generate hundreds of real Unicode text effects — triangle overlays, zalgo, fancy fonts and emoji combos — ready to copy into Discord, Instagram, TikTok and games."}],["$","meta","2",{"name":"application-name","content":"GlyphX"}],["$","link","3",{"rel":"manifest","href":"/glyphx/manifest.webmanifest"}],["$","meta","4",{"name":"format-detection","content":"telephone=no"}],["$","meta","5",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","6",{"name":"apple-mobile-web-app-title","content":"GlyphX"}],["$","meta","7",{"name":"apple-mobile-web-app-status-bar-style","content":"black"}],["$","link","8",{"rel":"icon","href":"/glyphx/favicon.ico?favicon.06c8_ixqbtexv.ico","sizes":"48x48","type":"image/x-icon"}],["$","link","9",{"rel":"apple-touch-icon","href":"/glyphx/apple-icon.png?apple-icon.1i3jwicdbf_4h.png","sizes":"180x180","type":"image/png"}],["$","$L18","10",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@19","v":null,"s":"$b"}},"a":"$@1a","u":"$@1b","b":"xxZXTYIJdUUU4yFg6QQ5N"}
+12:null
+b:300
+1b:true
+b:C
+1a:0
+d:"$undefined"
+a:"$undefined"
+19:"$undefined"
+13:"$undefined"
